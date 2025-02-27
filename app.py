@@ -71,7 +71,7 @@ def delete_producto(id):
     if producto:
         db.session.delete(producto)
         db.session.commit()
-    return redirect(url_for('index'))
+    return redirect(url_for('index'))  
 
 #AActualizar alumno
 @app.route('/productos/update/<int:id>', methods=['GET','POST'])
@@ -88,6 +88,6 @@ def update_producto(id):
         return redirect(url_for('index'))
     return render_template('update_producto.html',producto = producto)
   
- 
+   
 if __name__ == '__main__':
     app.run(debug=True)
